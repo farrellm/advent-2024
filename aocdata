@@ -1,0 +1,3 @@
+#!/bin/sh
+set -e
+curl "https://adventofcode.com/${YEAR:?}/day/${DAY:?}/input" --cookie "session=$(cat .token)"
