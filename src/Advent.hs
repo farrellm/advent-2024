@@ -3,10 +3,14 @@ module Advent
     Parser,
     unsafeParse,
     decimal,
+    someNE,
   )
 where
 
-import Text.Megaparsec as X
+import Control.Monad.Combinators.NonEmpty as X hiding (some, someTill)
+import Control.Monad.Combinators.NonEmpty qualified as NE
+import Optics as X hiding (noneOf)
+import Text.Megaparsec as X hiding (endBy1, sepBy1, sepEndBy1)
 import Text.Megaparsec.Char as X
 import Text.Megaparsec.Char.Lexer qualified as L
 
@@ -21,3 +25,7 @@ unsafeParse p f = do
 
 decimal :: Parser Int
 decimal = L.signed space1 L.decimal
+
+someNE :: (MonadPlus m) => m a -> m (NonEmpty a)
+someNE = NE.some
+{-# INLINE someNE #-}
