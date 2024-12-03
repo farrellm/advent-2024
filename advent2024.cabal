@@ -19,8 +19,9 @@ library
     import:           warnings
     exposed-modules:  Advent
                     , Day1
+                    , Day2
     -- other-modules:
-    -- other-extensions:
+    other-extensions: LexicalNegation
     build-depends:    base 
                     , containers
                     , megaparsec
