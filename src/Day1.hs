@@ -21,5 +21,5 @@ part2 = do
   ps <- unsafeParse (pair `sepEndBy` newline) "data/input1.txt"
   let (a, b) = unzip ps
       a' = foldl' (\m k -> M.insert k (0 :: Int) m) mempty a
-      b' = foldl' (\m k -> M.adjust (+ 1) k m) a' b
+      b' = foldl' (flip $ M.adjust (+ 1)) a' b
   print . sum $ mapMaybe (\k -> (k *) <$> M.lookup k b') a
