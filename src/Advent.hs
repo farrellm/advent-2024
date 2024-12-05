@@ -10,7 +10,7 @@ where
 import Control.Monad.Combinators.NonEmpty as X hiding (some, someTill)
 import Control.Monad.Combinators.NonEmpty qualified as NE
 import Optics as X hiding (noneOf)
-import Text.Megaparsec as X hiding (endBy1, sepBy1, sepEndBy1)
+import Text.Megaparsec as X hiding (endBy1, many, sepBy1, sepEndBy1, some)
 import Text.Megaparsec.Char as X
 import Text.Megaparsec.Char.Lexer qualified as L
 
