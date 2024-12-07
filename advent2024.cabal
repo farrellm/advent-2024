@@ -23,21 +23,37 @@ library
                     , Day3
                     , Day4
                     , Day5
+                    , Day6
     -- other-modules:
     other-extensions: LexicalNegation
     build-depends:    base 
                     , containers
                     , megaparsec
                     , optics
+                    , optics-extra
                     , parser-combinators
                     , relude
                     , text
+                    , unordered-containers
                     , vector
     mixins:   base hiding (Prelude)
             , relude (Relude as Prelude)
             , relude
     hs-source-dirs:   src
     default-language: GHC2024
+
+executable advent2024
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base
+                    , advent2024
+    -- other-modules:
+    -- other-extensions:
+    hs-source-dirs:   app
+    default-language: GHC2024
+    ghc-options: -rtsopts
 
 test-suite advent2024-test
     import:           warnings
