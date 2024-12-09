@@ -36,6 +36,9 @@ library
                     , text
                     , unordered-containers
                     , vector
+                    , vector-th-unbox
+                    , hashtables
+                    , vector-hashtables
     mixins:   base hiding (Prelude)
             , relude (Relude as Prelude)
             , relude
