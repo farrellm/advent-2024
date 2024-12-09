@@ -17,6 +17,7 @@ module Advent
     charGrid,
     findGridChar,
     gridRange,
+    inGrid,
     printGrid,
     CxInt (..),
     realPart,
@@ -123,6 +124,10 @@ gridRange g =
       j1 = minimum $ realPart <$> zs
       j2 = maximum $ realPart <$> zs
    in (i1, i2, j1, j2)
+
+inGrid :: (Int, Int, Int, Int) -> CxInt -> Bool
+inGrid (i1, i2, j1, j2) x =
+  j1 <= realPart x && realPart x <= j2 && i1 <= imagPart x && imagPart x <= i2
 
 printGrid :: Map Char (HashSet (CxInt)) -> IO ()
 printGrid g = do

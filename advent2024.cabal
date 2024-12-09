@@ -25,6 +25,7 @@ library
                     , Day5
                     , Day6
                     , Day7
+                    , Day8
     -- other-modules:
     other-extensions: LexicalNegation
     build-depends:    base 
